@@ -1,6 +1,6 @@
 // (24-01-25) 책 52쪽~
 console.log('Destructuring');
-
+//깃허브 테스트용 수정.
 //Object Destructuring
 
 function getUserInfo() {
