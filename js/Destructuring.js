@@ -15,7 +15,7 @@ function getUserInfo() {
             return 'My Name is ' + this.lastName;
         }
     };
-}
+} //주석추가
 
 let user = getUserInfo();
 console.log(user);
