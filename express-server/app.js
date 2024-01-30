@@ -2,7 +2,10 @@
 
 const fs = require('fs');
 const express = require('express');
+const userRouter = require('./user.js');
 const app = express();
+
+
 //미들웨어 
 // -- Request Data Process
 //application/json
@@ -56,6 +59,8 @@ const getData = (target, where) => {
     return data;
 }
 
+app.use('/user', userRouter);
+
 
 app.listen(8000, () => { //listen 은 하나만 실행한다.
     console.log('http://localhost:8000');
@@ -103,6 +108,7 @@ app.get('/profiles', (req, res) => {
 })
 
 //검색을 포함하는 경우 -> QueryString
+// list[0].id=100&list[0].name=Hong&...
 app.get('/search', (req, res) => {
     let keywards = req.query;
     console.log('검색조건 구성', keywards);
